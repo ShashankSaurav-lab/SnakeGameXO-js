@@ -157,8 +157,8 @@ section {
   background-position: center center;
   transform: scale(2);
 }
-.gem {
-  background-image: url("./assets/gem.png");
+.gemblock {
+  background-image: url("./assets/emerald.png");
   background-size: contain;
   background-position: center center;
   transform: scale(2);

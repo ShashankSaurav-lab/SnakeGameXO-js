@@ -1,5 +1,6 @@
 //variables
 let scoreFood = 0;
+let gemscore = 0;
 let start = false;
 let foodif = false;
 let currid;
@@ -150,9 +151,15 @@ function work(){
    }
       
   if (snake[0].x == foodX && snake[0].y == foodY){ //generates food when snake eats food
+     if (food == "gemblock"){
+      document.querySelector(".text-gem").textContent = `${++gemscore}`;
+     } else{
+      document.querySelector(".text-score").textContent = `${++scoreFood}`;
+     }
      foodController();
      foodif = true;
-     document.querySelector(".text-score").textContent = `${++scoreFood}`;
+    
+   
   }
   if(snake[0].x == 0 || snake[0].x == 23 || snake[0].y == 0|| snake[0].y == 23){
      gameover();
@@ -176,13 +183,15 @@ function foodController(){
   cells[foodX][foodY].classList.remove(`${food}`); //Remove old Food
 
   //picks a food between Apple, cherry and banana
-    let num1 = Math.floor((Math.random() * 3)+1);
-    if (num1 == 3){
+    let num1 = Math.floor((Math.random() * 100)+1);
+    if (num1 > 70){
     food = "apple";
-    } else if (num1 == 2){
+    } else if (num1 <70 && num1 > 40){
         food = "banana";
-    } else if(num1 == 1){
+    } else if(num1 <40 && num1 > 10){
         food = "cherry";
+    } else{
+      food = "gemblock";
     }
   
    foodCoordinate(); // Generates co-ordinates
@@ -197,7 +206,6 @@ function foodController(){
     }
   console.log(foodX,foodY);
   cells[foodX][foodY].classList.add(`${food}`); //Spawn food on map
-
   //Some food controller functions,
   function foodCoordinate(){ //Co-ordinate generator
    foodX =  Math.floor((Math.random() * 22)+1);
