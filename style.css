@@ -2,6 +2,7 @@
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
+  box-sizing: border-box;
 }
 body {
   display: flex;
@@ -50,49 +51,117 @@ section {
 .gemshow {
   display: flex;
 }
-/* Score board and info */
+/* ---------------------------------------------------- */
+/* Left Score board and right Shop */
+/* ------------------------------------------------------ */
 .scoreBoard,
-.info {
+.shop {
   margin-top: 60px;
-  background-color: #d2c9ba;
+  background-color: #241104;
   border: 5px solid #3b3b3b;
-}
-#S1 {
-  width: 23vw;
-  object-fit: cover;
-  position: relative;
-  transform: translate(-20%, -62%);
-}
+  border-radius: 12px;
 
-.scoreBoard .title,
-.info .title {
-  font-size: 17px;
-  margin: 10px;
-  margin-top: 20px;
-}
-
-.scoreBoard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 15vw;
+  justify-content: start;
+  width: 16vw;
+  /* 
+  padding: 7px; */
+}
+/* Editing the header image */
+.a {
+  width: 23vw;
+  object-fit: cover;
+  position: absolute;
+}
+.a1 {
+  transform: translate(-17%, -53%);
+}
+.a2 {
+  transform: translate(-17%, -53%);
+}
+
+.title1 {
+  padding: 7px;
+  margin-top: 24px;
+}
+
+.sbscreen {
+  /* position: relative;
+  transform: translate(10%, -22vh); */
+  background-color: #d2c9ba;
+  border-radius: 7px;
+  display: none;
+
+  margin: 3px;
+}
+#scores {
+  /* margin-left: 20px; */
+  padding-left: 60px;
+}
+#scores li {
+  padding: 2px;
 }
 .resetbtn {
+  background-color: red;
+  text-align: center;
+
+  border-radius: 7px;
+  border: solid 3px rgb(117, 2, 2);
+
+  width: 60%;
+  padding: 3px 0px;
+  margin: 0px 0px 10px 3vw;
+}
+.resetbtn:hover {
+  cursor: pointer;
+  background-color: darksalmon;
+}
+.upbtn {
+  background-color: #341b14da;
+  text-align: center;
+  padding: 7px;
+  border-radius: 7px;
+  border: 4px solid #261c16;
+
+  display: none;
+}
+
+.upbtn:hover {
+  cursor: pointer;
+  background-color: #2b2522;
+}
+.downbtn {
+  background-color: #341b14da;
+  text-align: center;
+  padding: 7px;
+  border-radius: 7px;
+  border: 4px solid #261c16;
+
+  display: block;
+  z-index: 1;
+}
+
+.downbtn:hover {
+  cursor: pointer;
+  background-color: #2b2522;
+}
+
+.xyz {
   background-color: #341b14da;
   text-align: center;
   padding: 7px;
   border-radius: 5px;
   border: 4px solid #261c16;
 }
-.resetbtn:hover {
+.xyz:hover {
   cursor: pointer;
+  background-color: #2b2522;
 }
+
 /* Shop etc. */
-.shop {
-  width: 20vw;
-  background-color: white;
-  height: 10vh;
-}
+
+/* ---------------------------------------------- */
 /* Main Content */
 .content {
   margin-top: 40px;
@@ -110,6 +179,8 @@ section {
 
   height: 500px;
   width: 500px;
+
+  padding: 10px;
 }
 .cover img {
   position: absolute;
