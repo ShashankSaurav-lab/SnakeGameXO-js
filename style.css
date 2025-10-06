@@ -55,7 +55,7 @@ section {
 /* Left Score board and right Shop */
 /* ------------------------------------------------------ */
 .scoreBoard,
-.shop {
+.settings {
   margin-top: 60px;
   background-color: #241104;
   border: 5px solid #3b3b3b;
@@ -73,11 +73,6 @@ section {
   width: 23vw;
   object-fit: cover;
   position: absolute;
-}
-.a1 {
-  transform: translate(-17%, -53%);
-}
-.a2 {
   transform: translate(-17%, -53%);
 }
 
@@ -123,7 +118,7 @@ section {
   padding: 7px;
   border-radius: 7px;
   border: 4px solid #261c16;
-
+  z-index: 1;
   display: none;
 }
 
@@ -143,18 +138,6 @@ section {
 }
 
 .downbtn:hover {
-  cursor: pointer;
-  background-color: #2b2522;
-}
-
-.xyz {
-  background-color: #341b14da;
-  text-align: center;
-  padding: 7px;
-  border-radius: 5px;
-  border: 4px solid #261c16;
-}
-.xyz:hover {
   cursor: pointer;
   background-color: #2b2522;
 }

@@ -12,7 +12,6 @@ let snake = [
   { x: 12, y: 14 },
   { x: 12, y: 15 },
 ];
-
 //Creating Cells (We can also use Canvas tag)
 for (let i = 1; i <= 24; i++) {
   let row = [];
@@ -68,6 +67,8 @@ function gameover() {
   console.log("game over, id is", currid);
   addScoreToLeaderboard(scoreFood); //update leaderboard
   scoreFood = 0;
+  document.querySelector("#lose").play();
+
   document.querySelector(".text-score").textContent = `${scoreFood}`; //Score = 0
   clearInterval(currid); //stops the game
   document.querySelector(".gameover-text").style.display = "block"; //gameover text visible
@@ -169,6 +170,7 @@ function work() {
     } else {
       document.querySelector(".text-score").textContent = `${++scoreFood}`;
     }
+    document.querySelector("#foodeat").play();
     foodController();
     foodif = true;
   }
